@@ -121,9 +121,11 @@ REST_FRAMEWORK = {
 # CORS
 # ---------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = [
+    "https://sncf-blood-drive.vercel.app",
     "https://blood-donation-frontend-pied.vercel.app",
 ]
 CSRF_TRUSTED_ORIGINS = [
+    "https://sncf-blood-drive.vercel.app",
     "https://blood-donation-frontend-pied.vercel.app",
 ]
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all in dev

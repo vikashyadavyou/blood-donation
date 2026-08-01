@@ -145,16 +145,12 @@ export default function LiveDisplay() {
     }
   }, []);
 
-  
-const WS_URL =
-  import.meta.env.PROD
-    ? "wss://blood-donation-43ro.onrender.com/ws/donors/"
-    : "ws://localhost:8000/ws/donors/";
+  // Dynamically use wss:// on https and ws:// on http — never blocked by browser
+  const WS_URL = import.meta.env.PROD
+    ? `wss://blood-donation-43ro.onrender.com/ws/donors/`
+    : `ws://localhost:8000/ws/donors/`;
 
-  useWebSocket(
-  WS_URL,
-  { onMessage: handleWsMessage }
-);
+  useWebSocket(WS_URL, { onMessage: handleWsMessage });
 
   // Fetch initial stats on mount
   useEffect(() => {
@@ -176,7 +172,7 @@ const WS_URL =
       <header className="h-[12vh] min-h-[80px] bg-white flex items-center justify-between px-6 lg:px-12 shadow-md relative z-20">
         {/* Left: SNM Logo */}
         <div className="flex flex-col items-center justify-center w-48 text-center text-[#1b4079]">
-          <img src="/media/sant-nirankari-mission-sant-nirankari-charitable-clinic-organization-social-app-religion-others-thumbnail.jpg" alt="SNM Logo" className="w-14 h-14 lg:w-16 lg:h-16 object-contain rounded-full shadow-sm" />
+          <img src="/snm-logo.jpg" alt="SNM Logo" className="w-14 h-14 lg:w-16 lg:h-16 object-contain rounded-full shadow-sm" />
         </div>
         
         {/* Center: Ribbon Banner */}
@@ -276,7 +272,7 @@ const WS_URL =
         </div>
         
         <div className="flex-shrink-0 mx-4 hidden lg:block">
-          <img src="/media/images.jpg" alt="SNCF Logo" className="w-12 h-12 lg:w-14 lg:h-14 object-contain bg-white rounded-full p-0.5 shadow-sm" />
+          <img src="/sncf-logo.jpg" alt="SNCF Logo" className="w-12 h-12 lg:w-14 lg:h-14 object-contain bg-white rounded-full p-0.5 shadow-sm" />
         </div>
         
         <div className="flex-1 flex items-center justify-end gap-3">

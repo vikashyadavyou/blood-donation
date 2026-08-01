@@ -51,15 +51,11 @@
       }
     }, []);
 
-    const WS_URL =
-  import.meta.env.PROD
-    ? "wss://blood-donation-43ro.onrender.com/ws/donors/"
-    : "ws://localhost:8000/ws/donors/";
+    const WS_URL = import.meta.env.PROD
+      ? `wss://blood-donation-43ro.onrender.com/ws/donors/`
+      : `ws://localhost:8000/ws/donors/`;
 
-const { isConnected } = useWebSocket(
-  WS_URL,
-  { onMessage: handleWsMessage }
-);
+    const { isConnected } = useWebSocket(WS_URL, { onMessage: handleWsMessage });
 
     // ── Fetch eligible donors ────────────────────────────────────────────
     const fetchEligibleDonors = async () => {
