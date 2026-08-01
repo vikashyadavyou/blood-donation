@@ -15,10 +15,9 @@ from django.views.decorators.http import require_http_methods
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from rest_framework import status
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
 from .models import Donor
 from .serializers import DonorSerializer, DonorCreateSerializer
 
@@ -56,6 +55,7 @@ def _broadcast_donor_event(donor, action_type):
 
 
 @api_view(['GET', 'POST'])
+@authentication_classes([])
 @permission_classes([AllowAny])
 def donor_list_create(request):
     """
@@ -85,6 +85,7 @@ def donor_list_create(request):
 
 
 @api_view(['PATCH'])
+@authentication_classes([])
 @permission_classes([AllowAny])
 def donor_complete(request, donor_id):
     """
@@ -115,6 +116,7 @@ def donor_complete(request, donor_id):
 
 
 @api_view(['GET'])
+@authentication_classes([])
 @permission_classes([AllowAny])
 def donor_stats(request):
     """
