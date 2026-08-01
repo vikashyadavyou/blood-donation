@@ -6,7 +6,7 @@ import confetti from 'canvas-confetti';
 
 import useWebSocket from '../hooks/useWebSocket';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api`:'https://blood-donation-43ro.onrender.com/api'; 
 const MAX_FEED_MESSAGES = 7; // Exactly 7 messages
 
 const APPRECIATION_MESSAGES = [
@@ -144,6 +144,8 @@ export default function LiveDisplay() {
       });
     }
   }, []);
+
+  
 
   useWebSocket(
     `ws://${window.location.host}/ws/donors/`,
