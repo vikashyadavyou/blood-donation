@@ -127,8 +127,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://sncf-blood-drive.vercel.app",
-    "https://blood-donation-frontend-pied.vercel.app",
+    "https://blood-donation-orcin-xi.vercel.app", 
+    "https://blood-donation-a4bw5o5zx-vikash-s-projects6.vercel.app",
 ]
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all in dev
 
