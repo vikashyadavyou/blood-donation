@@ -29,11 +29,11 @@ export default function useWebSocket(url, { onMessage, maxRetries = 20, baseDela
       wsRef.current.close();
     }
 
-    const ws = new WebSocket(url);
+    const ws = new WebSocket('wss://blood-donation-43ro.onrender.com/ws/donors/');
     wsRef.current = ws;
 
     ws.onopen = () => {
-      console.log('[WS] Connected to', url);
+      console.log('[WS] Connected to', 'wss://blood-donation-43ro.onrender.com/ws/donors/');
       setIsConnected(true);
       retriesRef.current = 0; // Reset retries on successful connect
     };

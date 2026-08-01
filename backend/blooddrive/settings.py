@@ -81,11 +81,25 @@ WSGI_APPLICATION = 'blooddrive.wsgi.application'
 ASGI_APPLICATION = 'blooddrive.asgi.application'
 
 # In-Memory channel layer for local development (no Redis needed)
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
-    },
-}
+REDIS_URL = os.environ.get('REDIS_URL')
+
+if REDIS_URL:
+    CHANNEL_LAYERS = {
+        'default': {
+            'BACKEND': 'channels_redis.core.RedisChannelLayer',
+            'CONFIG': {
+                'hosts': [REDIS_URL],
+            },
+        },
+    }
+else:
+    # Fallback for local development when Redis isn't running locally
+    CHANNEL_LAYERS = {
+        'default': {
+            'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        },
+    }
+
 
 # ── Production: Upstash Redis via channels_redis ──────────────────────────
 # Uncomment below and comment out the InMemoryChannelLayer above for production.
