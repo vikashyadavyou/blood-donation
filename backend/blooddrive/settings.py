@@ -23,6 +23,7 @@ ALLOWED_HOSTS = config(
 # ---------------------------------------------------------------------------
 INSTALLED_APPS = [
     'daphne',                   # ASGI server (must be first)
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,6 +127,7 @@ CORS_ALLOW_ALL_ORIGINS = DEBUG  # Allow all in dev
 # ---------------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
