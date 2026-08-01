@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import useWebSocket from '../hooks/useWebSocket';
 
-// const API_BASE = 'https://blood-donation-43ro.onrender.com/api/';
+const API_BASE = 'https://blood-donation-43ro.onrender.com/api/';
 
 /**
  * Admin Dashboard – Two-tab interface for volunteers.
