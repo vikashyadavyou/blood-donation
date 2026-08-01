@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://blood-donation-43ro.onrender.com/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
