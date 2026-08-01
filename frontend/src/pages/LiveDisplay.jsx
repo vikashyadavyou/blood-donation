@@ -10,17 +10,17 @@ const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}
 const MAX_FEED_MESSAGES = 7; // Exactly 7 messages
 
 const APPRECIATION_MESSAGES = [
-  "💖 Happy Friendship Day! Thank you, {name}, for donating hope.",
-  "❤️ {name}, your blood donation celebrates true friendship.",
-  "🩸 {name}, you made Friendship Day truly meaningful.",
-  "🤝 Happy Friendship Day, {name}! Thanks for sharing the gift of life.",
-  "✨ {name}, one donation, countless friendships with humanity.",
-  "🤍 Happy Friendship Day! {name}, you made a life-saving difference.",
-  "🩸 {name}, your donation is the truest act of friendship.",
-  "🫶 Thank you, {name}, for being a friend to humanity.",
-  "🤝 Happy Friendship Day, {name}! One donation. Endless smiles.",
-  "❤️ {name}, today your friendship reached someone you've never met.",
-  "🩸 {name}, you're a lifesaver in disguise – happy Friendship Day!"
+  "Happy Friendship Day! Thank you, {name}, for donating hope.",
+  "{name}, your blood donation celebrates true friendship.",
+  "{name}, you made Friendship Day truly meaningful.",
+  "Happy Friendship Day, {name}! Thanks for sharing the gift of life.",
+  "{name}, one donation, countless friendships with humanity.",
+  "Happy Friendship Day! {name}, you made a life-saving difference.",
+  "{name}, your donation is the truest act of friendship.",
+  "Thank you, {name}, for being a friend to humanity.",
+  "Happy Friendship Day, {name}! One donation. Endless smiles.",
+  "{name}, today your friendship reached someone you've never met.",
+  "{name}, you're a lifesaver in disguise – happy Friendship Day!"
 
 ];
 
