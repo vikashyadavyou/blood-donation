@@ -10,15 +10,18 @@ const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}
 const MAX_FEED_MESSAGES = 7; // Exactly 7 messages
 
 const APPRECIATION_MESSAGES = [
-  "Thank you, {name}, for donating blood.",
-  "{name}, your donation is a true act of kindness.",
-  "We deeply appreciate your blood donation, {name}.",
-  "A hero's contribution! Thank you, {name}.",
-  "{name}, thank you for saving lives today.",
-  "Your generosity knows no bounds, {name}.",
-  "Thank you for being a lifesaver, {name}.",
-  "A drop of your blood is a drop of life, {name}.",
-  "{name}, your selfless act will be remembered."
+  "💖 Happy Friendship Day! Thank you, {name}, for donating hope.",
+  "❤️ {name}, your blood donation celebrates true friendship.",
+  "🩸 {name}, you made Friendship Day truly meaningful.",
+  "🤝 Happy Friendship Day, {name}! Thanks for sharing the gift of life.",
+  "✨ {name}, one donation, countless friendships with humanity.",
+  "🤍 Happy Friendship Day! {name}, you made a life-saving difference.",
+  "🩸 {name}, your donation is the truest act of friendship.",
+  "🫶 Thank you, {name}, for being a friend to humanity.",
+  "🤝 Happy Friendship Day, {name}! One donation. Endless smiles.",
+  "❤️ {name}, today your friendship reached someone you've never met.",
+  "🩸 {name}, you're a lifesaver in disguise – happy Friendship Day!"
+
 ];
 
 function fireConfetti() {
