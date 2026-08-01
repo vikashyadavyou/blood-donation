@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import useWebSocket from '../hooks/useWebSocket';
 
-const API_BASE = 'https://blood-donation-43ro.onrender.com/api/';
+// const API_BASE = 'https://blood-donation-43ro.onrender.com/api/';
 
 /**
  * Admin Dashboard – Two-tab interface for volunteers.
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
   // ── Fetch eligible donors ────────────────────────────────────────────
   const fetchEligibleDonors = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/donors/?status=ELIGIBLE`);
+      const res = await axios.get(`${API_BASE}donors/?status=ELIGIBLE`);
       setEligibleDonors(res.data);
     } catch (err) {
       console.error('Failed to fetch eligible donors:', err);
@@ -70,7 +70,7 @@ export default function AdminDashboard() {
   // ── Fetch stats ──────────────────────────────────────────────────────
   const fetchStats = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/donors/stats/`);
+      const res = await axios.get(`https://blood-donation-43ro.onrender.com/api/donors/stats/`);
       setStats(res.data);
     } catch (err) {
       console.error('Failed to fetch stats:', err);
@@ -95,7 +95,7 @@ export default function AdminDashboard() {
 
     setIsSubmitting(true);
     try {
-      await axios.post(`${API_BASE}/donors/`, {
+      await axios.post(`https://blood-donation-43ro.onrender.com/api/donors/`, {
         name: donorName.trim(),
         language: 'EN',
       });
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
   const handleMarkCompleted = async (donor) => {
     setCompletingId(donor.id);
     try {
-      await axios.patch(`${API_BASE}/donors/${donor.id}/complete/`);
+      await axios.patch(`https://blood-donation-43ro.onrender.com/api/donors/${donor.id}/complete/`);
       showToast(`🎉 ${donor.name} marked as completed!`);
     } catch (err) {
       console.error('Failed to mark completed:', err);
