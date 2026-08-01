@@ -146,11 +146,15 @@ export default function LiveDisplay() {
   }, []);
 
   
+const WS_URL =
+  import.meta.env.PROD
+    ? "wss://blood-donation-43ro.onrender.com/ws/donors/"
+    : "ws://localhost:8000/ws/donors/";
 
   useWebSocket(
-    `ws://${window.location.host}/ws/donors/`,
-    { onMessage: handleWsMessage }
-  );
+  WS_URL,
+  { onMessage: handleWsMessage }
+);
 
   // Fetch initial stats on mount
   useEffect(() => {

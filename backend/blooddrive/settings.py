@@ -13,10 +13,15 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-sncf-blooddrive-dev-k
 
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS",
-    default="127.0.0.1,localhost"
-).split(",")
+ALLOWED_HOSTS = [
+    "blood-donation-43ro.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://blood-donation-frontend-pied.vercel.app",
+]
 
 # ---------------------------------------------------------------------------
 # Application definition
